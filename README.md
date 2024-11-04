@@ -7,8 +7,10 @@
 ## Term 1
 ### Etch-A-Sketch
 Graphics project with kepress drawing controls with the ability to save images.
+
 ![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/images/Etch-A-Sketch1.png?raw=true)
-[Source Code]()
+
+[Source Code](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/src/etchASketch.pde)
 
 ## Term 2
 ### Calculator
