@@ -5,6 +5,13 @@
 * Wild Kratts is super cool, and is *definently* not a weird TV Show for a high schooler
 
 ## Term 1
+### Temperature Converter
+Graphic display using mouse position to convert Farenheit to Celcius, or Celsius to Farenheit.
+
+![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/images/tempConverter1.png?raw=true)
+
+[Source Code]()
+
 ### Computer Timeline
 Graphic display using mouse inputs to display information in a clear manner.
 
