@@ -7,7 +7,7 @@
 ## Term 1
 ### Etch-A-Sketch
 Graphics project with kepress drawing controls with the ability to save images.
-![Running App]()
+![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/images/Etch-A-Sketch1.png?raw=true)
 [Source Code]()
 
 ## Term 2
