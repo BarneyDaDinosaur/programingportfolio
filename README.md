@@ -6,7 +6,7 @@
 
 ## Term 1
 ### Temperature Converter
-Graphic display using mouse position to convert Farenheit to Celcius, or Celsius to Farenheit.
+Graphic display using mouse position to convert Farenheit to Celcius, or Celcius to Farenheit.
 
 ![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/images/tempConverter1.png?raw=true)
 
