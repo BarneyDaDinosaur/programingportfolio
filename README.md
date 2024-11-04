@@ -7,8 +7,8 @@
 ## Term 1
 ### Etch-A-Sketch
 Graphics project with kepress drawing controls with the ability to save images.
-![]()
-[]()
+![Running App]()
+[Source Code]()
 
 ## Term 2
 ### Calculator
