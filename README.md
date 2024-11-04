@@ -8,7 +8,7 @@
 ### Computer Timeline
 Graphic display using mouse inputs to display information in a clear manner.
 
-![]()
+![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/images/timeline1.png?raw=true)
 
 []()
 
