@@ -5,5 +5,13 @@
 * Wild Kratts is super cool, and is *definently* not a weird TV Show for a high schooler
 
 ## Term 1
+### Etch-A-Sketch
+Graphics project with kepress drawing controls with the ability to save images.
+![]()
+[]()
 
 ## Term 2
+### Calculator
+Object oriented graphical calculator with customs buttons and UI.
+![]()
+[]()
