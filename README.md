@@ -5,6 +5,13 @@
 * Wild Kratts is super cool, and is *definently* not a weird TV Show for a high schooler
 
 ## Term 1
+### Computer Timeline
+Graphic display using mouse inputs to display information in a clear manner.
+
+![]()
+
+[]()
+
 ### Etch-A-Sketch
 Graphics project with kepress drawing controls with the ability to save images.
 
