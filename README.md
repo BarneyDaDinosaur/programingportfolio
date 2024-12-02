@@ -33,3 +33,10 @@ Object oriented graphical calculator with customs buttons and UI.
 ![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/images/calc1.png?raw=true)
 
 [Source Code](https://github.com/BarneyDaDinosaur/programingportfolio/tree/main/src/Calculator)
+
+### Wild Kratts Game
+Mouse and Key controlled shooting game with a Wild Kratts theme.
+
+![Running App]
+
+[Source Code]
