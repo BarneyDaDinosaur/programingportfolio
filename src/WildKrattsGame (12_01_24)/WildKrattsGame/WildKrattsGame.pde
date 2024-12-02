@@ -6,7 +6,7 @@ ArrayList<ZachBot> bots = new ArrayList<ZachBot>();
 ArrayList<Laser> lasers = new ArrayList<Laser>();
 ArrayList<Powerup> powups = new ArrayList<Powerup>();
 ArrayList<Star> stars = new ArrayList<Star>();
-Timer bTime, b2Time, puTime, dbTime;
+Timer bTime, b2Time, b3Time, b4Time, b5Time, puTime, dbTime;
 PImage infoPanel;
 import processing.sound.*;
 SoundFile squak, squirt;
@@ -15,6 +15,9 @@ void setup() {
   size(500, 500);
   bTime = new Timer(2400);
   b2Time = new Timer(4800);
+  b3Time = new Timer(4800);
+  b4Time = new Timer(4800);
+  b5Time = new Timer(4800);
   bTime.start();
   puTime = new Timer(15000); //offical: 15000
   puTime.start();
@@ -98,7 +101,7 @@ void draw() {
       }
       if (bot.reachedLeft()) {
         bots.remove(bot);
-        gff.health -= 30;
+        gff.health -= 50;
         background(242, 137, 137, 5);
       }
     }
@@ -159,6 +162,27 @@ void draw() {
       if (b2Time.isFinished()) {
         bots.add(new ZachBot());
         b2Time.start();
+      }
+    }
+    if (score > 1000) {
+      level = 3;
+      if (b3Time.isFinished()) {
+        bots.add(new ZachBot());
+        b3Time.start();
+      }
+    }
+    if (score > 1500) {
+      level = 4;
+      if (b4Time.isFinished()) {
+        bots.add(new ZachBot());
+        b4Time.start();
+      }
+    }
+    if (score > 2000) {
+      level = 5;
+      if (b5Time.isFinished()) {
+        bots.add(new ZachBot());
+        b5Time.start();
       }
     }
 
