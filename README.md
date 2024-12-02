@@ -39,4 +39,4 @@ Mouse and Key controlled shooting game with a Wild Kratts theme.
 
 ![Running App]
 
-[Source Code]
+[Source Code](https://github.com/BarneyDaDinosaur/programingportfolio/tree/main/src/WildKrattsGame%20(12_01_24)/WildKrattsGame)
