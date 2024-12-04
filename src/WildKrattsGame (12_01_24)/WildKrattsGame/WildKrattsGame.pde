@@ -9,6 +9,7 @@ ArrayList<Star> stars = new ArrayList<Star>();
 Timer bTime, b2Time, b3Time, b4Time, b5Time, puTime, dbTime;
 PImage infoPanel;
 import processing.sound.*;
+boolean slow_down;
 SoundFile squak, squirt;
 
 void setup() {
@@ -42,6 +43,7 @@ void draw() {
     strokeWeight(1);
     noCursor();
     background(96, 161, 216);
+
     stars.add(new Star());
     for (int i = 0; i < stars.size(); i++) {
       Star s = stars.get(i);
@@ -54,6 +56,11 @@ void draw() {
 
     if (frameCount % 60  == 0) {
       time++;
+    }
+
+    if (frameCount % 1800  == 0) {
+      slow_down = false;
+      gff.gff = loadImage("gfowl2.png");
     }
 
     if (frameCount % 180  == 0) {
@@ -69,6 +76,9 @@ void draw() {
       Laser laser = lasers.get(i);
       for (int j = 0; j<bots.size(); j++) {
         ZachBot b = bots.get(j);
+        if (slow_down && b.speed < 1) {
+          b.speed -= 1;
+        }
         if (laser.intersect(b)) {
           score += 15;
           lasers.remove(laser);
@@ -133,6 +143,7 @@ void draw() {
           }
         } else { //can't think of how to slow down rocks
           gff.gff = loadImage("gfowlPow2.gif");
+          slow_down = true;
         }
         powups.remove(pu);
         //ammo benefit
@@ -232,6 +243,7 @@ void startScreen() {
 
 void gameOver() {
   play = false;
+  slow_down = false;
   background(98);
   cursor();
   noLoop();
