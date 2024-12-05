@@ -80,9 +80,6 @@ void draw() {
       Laser laser = lasers.get(i);
       for (int j = 0; j<bots.size(); j++) {
         ZachBot b = bots.get(j);
-        if (slow_down) {
-          b.speed = 2;
-        }
         if (laser.intersect(b)) {
           score += 15;
           lasers.remove(laser);
@@ -103,6 +100,9 @@ void draw() {
       ZachBot bot = bots.get(i);
       bot.display();
       bot.move();
+      if (slow_down) {
+        bot.speed = 2;
+      }
       if (gff.intersect(bot)) {
         gff.health -= (0.5*bot.diam);
         bots.remove(bot);
