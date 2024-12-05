@@ -6,7 +6,7 @@ ArrayList<ZachBot> bots = new ArrayList<ZachBot>();
 ArrayList<Laser> lasers = new ArrayList<Laser>();
 ArrayList<Powerup> powups = new ArrayList<Powerup>();
 ArrayList<Star> stars = new ArrayList<Star>();
-Timer bTime, b2Time, b3Time, b4Time, b5Time, puTime, dbTime;
+Timer bTime, b2Time, b3Time, b4Time, b5Time, puTime, dbTime, slowTime;
 PImage infoPanel;
 import processing.sound.*;
 boolean slow_down;
@@ -20,6 +20,7 @@ void setup() {
   b4Time = new Timer(4800);
   b5Time = new Timer(4800);
   bTime.start();
+  slowTime = new Timer(30000);
   puTime = new Timer(15000); //offical: 15000
   puTime.start();
   squak = new SoundFile(this, "gff_squak2.wav");
@@ -58,8 +59,7 @@ void draw() {
       time++;
     }
 
-    if (frameCount % 1800  == 0) {
-      slow_down = false;
+    if (frameCount % 360  == 0) {
       gff.gff = loadImage("gfowl2.png");
     }
 
@@ -72,12 +72,16 @@ void draw() {
       }
     }
 
+    if (slowTime.isFinished()) {
+      slow_down = false;
+    }
+
     for (int i = 0; i < lasers.size(); i++) {
       Laser laser = lasers.get(i);
       for (int j = 0; j<bots.size(); j++) {
         ZachBot b = bots.get(j);
-        if (slow_down && b.speed < 1) {
-          b.speed -= 1;
+        if (slow_down) {
+          b.speed = 2;
         }
         if (laser.intersect(b)) {
           score += 15;
@@ -126,7 +130,8 @@ void draw() {
       Powerup pu = powups.get(i);
       pu.display();
       pu.move();
-      if (pu.intersect(gff)) { //upgrades based on randVar
+      if (pu.intersect(gff)) {//upgrades based on randVar
+        gff.gff = loadImage("gfowlPow2.gif");
         if (pu.randVar < 1) {
           gff.laserCount += 75;
         } else if (pu.randVar < 2) {
@@ -141,9 +146,9 @@ void draw() {
           for (int j=0; j<height; j+=25) {
             lasers.add(new Laser(-10, j));
           }
-        } else { //can't think of how to slow down rocks
-          gff.gff = loadImage("gfowlPow2.gif");
+        } else {
           slow_down = true;
+          slowTime.start();
         }
         powups.remove(pu);
         //ammo benefit
@@ -194,6 +199,14 @@ void draw() {
       if (b5Time.isFinished()) {
         bots.add(new ZachBot());
         b5Time.start();
+      }
+    }
+
+    if (score > 2500) {
+      for (int i = 2500; i > 0; i += 500) {
+        if (score > i) {
+          level += 1;
+        }
       }
     }
 
