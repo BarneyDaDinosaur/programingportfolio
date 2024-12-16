@@ -4,6 +4,10 @@
 * Currently, I  can type just about 40 wpm
 * Wild Kratts is super cool, and is *definently* not a weird TV Show for a high schooler
 
+### Certificates
+
+![State Exam Computer Programming 1](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/src/William%20Barney_Computer%20Programming%20I_12162024.pdf)
+
 ## Term 1
 ### Temperature Converter
 Graphic display using mouse position to convert Farenheit to Celcius, or Celcius to Farenheit.
