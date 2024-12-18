@@ -5,8 +5,7 @@
 * Wild Kratts is super cool, and is *definently* not a weird TV Show for a high schooler
 
 ### Certificates
-
-![CTE State Exam Computer Programming 1](src/William Barney_Computer Programming I_12162024.pdf)
+[CTE State Exam Computer Programming 1](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/src/William%20Barney_Computer%20Programming%20I_12162024.pdf)
 
 ## Term 1
 ### Temperature Converter
