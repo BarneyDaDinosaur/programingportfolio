@@ -43,3 +43,18 @@ Mouse and Key controlled shooting game with a Wild Kratts theme.
 ![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/main/images/WildKrattsGame1.png?raw=true)
 
 [Source Code](https://github.com/BarneyDaDinosaur/programingportfolio/tree/main/src/WildKrattsGame%20(12_01_24)/WildKrattsGame)
+
+## Term 3
+### Random Word Generator
+Word based command line word generator with definitions
+
+![Running App]()
+
+[Source Code]()
+
+### Shape Calculator
+Command line based calculator for suface area and volume of different shapes
+
+![Running App]()
+
+[Source Code]()
