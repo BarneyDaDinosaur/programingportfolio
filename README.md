@@ -48,13 +48,13 @@ Mouse and Key controlled shooting game with a Wild Kratts theme.
 ### Random Word Generator
 Word based command line word generator with definitions
 
-![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/1dae0884cd304f417cd062d99652307ca9ff5ce7/images/WordCreator.png)
+![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/1dae0884cd304f417cd062d99652307ca9ff5ce7/images/WordCreator.png?raw=true)
 
 [Source Code](https://github.com/BarneyDaDinosaur/programingportfolio/blob/b136e78e6212b91708f83ff615a559f2849fa9df/src/WordCreator2.5.5.java)
 
 ### Shape Calculator
 Command line based calculator for suface area and volume of different shapes
 
-![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/8b8e2bc934266cec568d42ea664b5d190a554abf/images/ShapeTester.png)
+![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/8b8e2bc934266cec568d42ea664b5d190a554abf/images/ShapeTester.png?raw=true)
 
 [Source Code](https://github.com/BarneyDaDinosaur/programingportfolio/tree/cb1a93597ae38d28b99f86a6174f7b7c60302d32/src/ShapeTester.java)
