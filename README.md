@@ -55,6 +55,6 @@ Word based command line word generator with definitions
 ### Shape Calculator
 Command line based calculator for suface area and volume of different shapes
 
-![Running App]()
+![Running App](https://github.com/BarneyDaDinosaur/programingportfolio/blob/8b8e2bc934266cec568d42ea664b5d190a554abf/images/ShapeTester.png)
 
 [Source Code]()
