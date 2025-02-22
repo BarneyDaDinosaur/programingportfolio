@@ -1,4 +1,4 @@
-//William Barney | Nov 6 | Spaceship Game
+//William Barney | Nov 6 2024| Spaceship Game
 int score, time, level, health, totalTime;
 boolean play;
 gFowlf gff;
@@ -13,6 +13,7 @@ boolean slow_down;
 SoundFile squak, squirt;
 
 void setup() {
+//Game settings and initialisers
   size(500, 500);
   bTime = new Timer(2400);
   b2Time = new Timer(4800);
@@ -33,18 +34,22 @@ void setup() {
 }
 
 void draw() {
+//Screen set up
   loop();
   if (play == false) {
     startScreen();
   }
 
   if (play == true) {
+//In game code
+ //During play settings
     squak.amp(1);
     textAlign(LEFT);
     strokeWeight(1);
     noCursor();
     background(96, 161, 216);
 
+ //Adding and removing raindrops
     stars.add(new Star());
     for (int i = 0; i < stars.size(); i++) {
       Star s = stars.get(i);
@@ -55,31 +60,38 @@ void draw() {
       }
     }
 
+ //Second counter
     if (frameCount % 60  == 0) {
       time++;
     }
 
+ //Disables Powerup look of the ship
     if (frameCount % 360  == 0) {
       gff.gff = loadImage("gfowl2.png");
     }
 
+ //Health regeneration timer
     if (frameCount % 180  == 0) {
       if (gff.health < 100) {
         gff.health++;
       }
+  //Ammo regeneration timer
       if (gff.laserCount < 100) {
         gff.laserCount ++;
       }
     }
 
+ //Stops the slow down powerup effect
     if (slowTime.isFinished()) {
       slow_down = false;
     }
 
+ //Laser/ammo code
     for (int i = 0; i < lasers.size(); i++) {
       Laser laser = lasers.get(i);
       for (int j = 0; j<bots.size(); j++) {
         ZachBot b = bots.get(j);
+ //Removing or shrinking enemy bot is a laser hits it
         if (laser.intersect(b)) {
           score += 15;
           lasers.remove(laser);
@@ -91,28 +103,34 @@ void draw() {
       }
       laser.display();
       laser.move();
+ //Removes laser if it goes off of the screen
       if (laser.reachedRight()) {
         lasers.remove(laser);
       }
     }
 
+//Main enemy bot code
     for (int i = 0; i < bots.size(); i++) {
       ZachBot bot = bots.get(i);
       bot.display();
       bot.move();
+ //Applies slow down power up
       if (slow_down) {
         bot.speed = 2;
       }
+ //Damages and reduces the score of the player if it touches a bot
       if (gff.intersect(bot)) {
         gff.health -= (0.5*bot.diam);
         bots.remove(bot);
         score -= bot.diam;
       }
+ //Damages and lowers score of the player if a doughball touches the player
       if (gff.intersectDough(bot)) {
         gff.health -= (0.5*bot.diam2);
         bots.remove(bot);
         score -= bot.diam2;
       }
+ //Reduces score and remives bot if is crosses all of the screen
       if (bot.reachedLeft()) {
         bots.remove(bot);
         gff.health -= 50;
@@ -131,7 +149,9 @@ void draw() {
       pu.display();
       pu.move();
       if (pu.intersect(gff)) {//upgrades based on randVar
+ //Changes the look of the player's ship
         gff.gff = loadImage("gfowlPow2.gif");
+ //Applies different effects of the player depending on RandVar
         if (pu.randVar < 1) {
           gff.laserCount += 75;
         } else if (pu.randVar < 2) {
@@ -151,28 +171,25 @@ void draw() {
           slowTime.start();
         }
         powups.remove(pu);
-        //ammo benefit
-        //health
-        //invincible
-        //increase turretCount
-        //visuale indication for ship (at beginning, because it is everytime)
-        // screen wipe
-        // slow down rocks
-        // point bonus
       }
+ //Removes powerup disc if it crosses the screen
       if (pu.reachedLeft()) {
         powups.remove(pu);
       }
     }
     //end of powerup stuff
 
+//Moves the main player's ship
     gff.display();
     gff.move(mouseX, mouseY);
+
+ //Adds new bots in a timer
     if (bTime.isFinished()) {
       bots.add(new ZachBot());
       bTime.start();
     }
 
+ //Increases level and the number of bots spawning based on score
     if (score > 500) {
       level = 2;
       if (b2Time.isFinished()) {
@@ -210,14 +227,17 @@ void draw() {
       }
     }
 
+ //Updates info panel
     infoPanel();
 
+ //Initiates Game Over Screen
     if (gff.health<=0) {
       gameOver();
     }
   }
 }
 
+//Fires ammo
 void keyPressed() {
   if (keyPressed && key == ' ' && gff.fire()) {
     squirt.amp(0.5);
@@ -227,6 +247,7 @@ void keyPressed() {
   }
 }
 
+//Info Panel display
 void infoPanel() {
   infoPanel = loadImage("infoPanel1.png");
   infoPanel.resize(250, 140);
@@ -240,6 +261,7 @@ void infoPanel() {
   text("Level:" + level, 332, 471);
 }
 
+//Start screen code
 void startScreen() {
   cursor();
   background(118);
@@ -254,6 +276,7 @@ void startScreen() {
   text("You are in the Guinea Fowl Flapper \n Press Spacebar to shoot slime from the sliminator \n Avoid Zachbots/Dough Shooter/Mannequin Robots \n Creature Power Discs offer powerups \n Right-click to see this screen at any point \n If the sound is annoything you, \n      you can mute your own computer", 10, 20);
 }
 
+//Game over screen
 void gameOver() {
   play = false;
   slow_down = false;
@@ -283,6 +306,7 @@ void gameOver() {
 void ticker() {
 }
 
+//If PLAY is pressed, the game starts
 void mousePressed() {
   if (mouseX > 260 && mouseX < 365 && mouseY > 215 && mouseY < 250) {
     play =  true;
