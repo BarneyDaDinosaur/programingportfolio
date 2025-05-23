@@ -65,6 +65,8 @@ Command line based calculator for suface area and volume of different shapes
 ### CSharp Music App
 dvfv
 
-![Running App]()
+![Running App (Thanks for letting me borrow your picture Santhosh)](https://github.com/Santhosh8828/programmingportfolio/blob/main/images/selectionScreen.png)
+
 [Source Code](https://github.com/HenryBald/CSharp/tree/main/src/CSharp)
+
 [README](https://github.com/HenryBald/CSharp/blob/main/README.md)
