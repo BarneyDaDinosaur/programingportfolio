@@ -63,7 +63,7 @@ Command line based calculator for suface area and volume of different shapes
 
 ## Term 4
 ### CSharp Music App
-dvfv
+This is a music app me and some friends created. We tried to create our own GarageBand-themed experience with our own sounds and art.
 
 ![Running App (Thanks for letting me borrow your picture Santhosh)](https://github.com/Santhosh8828/programmingportfolio/blob/main/images/selectionScreen.png)
 
